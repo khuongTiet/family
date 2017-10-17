@@ -7,3 +7,19 @@ class Member:
         self.maritalStatus = None
         self.deceased = None
         self.childrenCount = 0
+
+    def updateAge(newAge):
+        self.age = newAge
+
+    def updateMaritalStatus(newStatus):
+        self.maritalStatus = newStatus
+
+    def updateDeceased(newState):
+        self.deceased = newState
+
+    def childrenCount(newCount):
+        self.childrenCount = newCount
+
+    def getFullName():
+        return self.firstName + self.lastName
+    
