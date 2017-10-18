@@ -24,5 +24,8 @@ class Member:
     def getId():
         return self.id
 
+    def getFamilyId():
+        return self.familyId
+
     def addFamilyId(fid):
         self.familyId = fid
