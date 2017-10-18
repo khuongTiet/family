@@ -1,25 +1,28 @@
+import uuid
+
 class Member:
     def __init__(self, fn, ln):
-        self.firstName = fn
-        self.lastName = ln
-        self.sex = None
-        self.age = None
-        self.maritalStatus = None
-        self.deceased = None
-        self.childrenCount = 0
+        self.basicInformation = {
+            'firstName': fn,
+            'lastName': ln,
+            'sex': None,
+            'age': None,
+            'maritalStatus': None,
+            'childrenCount': None
+        }
+        self.id = uuid.uuid4().hex
+        self.familyId = None
+        self.belongsTo = []
+        belongsTo.append(self.familyId)
 
-    def updateAge(newAge):
-        self.age = newAge
-
-    def updateMaritalStatus(newStatus):
-        self.maritalStatus = newStatus
-
-    def updateDeceased(newState):
-        self.deceased = newState
-
-    def childrenCount(newCount):
-        self.childrenCount = newCount
+    def updateBasicInformation(key, newValue):
+        self.basicInformation[key] = newValue;
 
     def getFullName():
-        return self.firstName + self.lastName
-    
+        return self.basicInformation['firstName'] + self.basicInformation['lastName']
+
+    def getId():
+        return self.id
+
+    def addFamilyId(fid):
+        self.familyId = fid
