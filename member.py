@@ -13,7 +13,7 @@ class Member:
         self.id = uuid.uuid4().hex
         self.familyId = None
         self.belongsTo = []
-        belongsTo.append(self.familyId)
+        self.belongsTo.append(self.familyId)
 
     def updateBasicInformation(key, newValue):
         self.basicInformation[key] = newValue;
@@ -26,6 +26,9 @@ class Member:
 
     def getFamilyId():
         return self.familyId
+
+    def setFamilyId(fid):
+        self.familyId = fid;
 
     def addFamilyId(fid):
         self.familyId = fid
