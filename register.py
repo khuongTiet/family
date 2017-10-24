@@ -26,18 +26,21 @@ def RegisterFamily():
 # For adding yourself, just call addMember("", "", True)
 
 def addMember(fname, lname, isSelf):
-    if isSelf:
-        fname = input("Enter your first name: ")
-        lname = input("Enter your last name: ")
     user = Member(fname, lname)
     People[user.id] = user
+    if isSelf:
+        return user.id
 
 def deleteMember(uid):
-    People.pop(uid)
+    del People[uid]
     # Remove from relations
 
 def updateMember(uid, nkey, nvalue):
     People[uid].updateBasicInformation(nkey, nvalue)
+
+def relateParent(child, Parent):
+    child.parents.append(Parent.id)
+    Parent.children.append(child.id)
 
 def printMembers():
     for x in People.items():

@@ -10,25 +10,18 @@ class Member:
             'maritalStatus': None,
             'childrenCount': None
         }
-        self.id = uuid.uuid4().hex
-        self.familyId = None
-        self.belongsTo = []
-        self.belongsTo.append(self.familyId)
+        self.id = self.basicInformation['firstName'] + self.basicInformation['lastName']
+        self.parents = []
+        self.children = []
 
     def updateBasicInformation(key, newValue):
         self.basicInformation[key] = newValue;
 
-    def getFullName():
-        return self.basicInformation['firstName'] + self.basicInformation['lastName']
+    def getFullName(self):
+        return self.basicInformation['firstName'] + " " + self.basicInformation['lastName']
 
-    def getId():
-        return self.id
+    def __repr__(self):
+        return "Member(" + self.getFullName() + ")"
 
-    def getFamilyId():
-        return self.familyId
-
-    def setFamilyId(fid):
-        self.familyId = fid
-
-    def addFamilyId(fid):
-        self.familyId = fid
+    def __str__(self):
+        return getFullName()
