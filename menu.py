@@ -1,22 +1,29 @@
 #initializes menu for console
+from register import *
 
 def menuRun():
 	print("""Select a choice from the options below:
-	A) Add a sibling.
-	B) Add a parent.
-	C) Cancel member selction.
+	A) Add member
+	B) Select member
+	C) Cancel member selection.
 	D) Delete selected member.
+	P) Print current member
 	E) Exit menu. \n""")
 	userChoice = input("Enter here: ")
 	while True:
 		if userChoice.rstrip().upper() == "A":
 			print ("User has selected A. Adding sibling. \n")
-		elif  userChoice.rstrip().upper() == "B":
-			print("User has selected B. Adding parent. \n")
+			fname = input("Enter your first name: ")
+	    	lname = input("Enter your last name: ")
+			addMember(fname, lname, False)
+		elif userChoice.rstrip().upper() == "B":
+			print("User has selected ")
 		elif userChoice.rstrip().upper() == "C":
 			print("Canceling selection... \n")
 		elif userChoice.rstrip().upper() == "D":
 			print("Deleting member...\n")
+		elif userChoice.rstrip().upper() == "P":
+			printMembers()
 		elif userChoice.rstrip().upper() == "E":
 			print("Exiting Menu... \n")
 			break

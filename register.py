@@ -16,8 +16,8 @@ import uuid
 People = {}
 
 def RegisterFamily():
-    # firstName = input("Enter your first name: ")
-    # lastName = input("Enter your last name: ")
+    addMember("", "", True)
+
     # user = Member(firstName, lastName)
     # FamilyTree.append({'members': [], 'id': uuid.uuid4().hex})
     # FamilyTree[relations['self']]['members'].append(user)
@@ -33,8 +33,12 @@ def addMember(fname, lname, isSelf):
     People[user.id] = user
 
 def deleteMember(uid):
-    People.pop(uid);
+    People.pop(uid)
     # Remove from relations
 
 def updateMember(uid, nkey, nvalue):
     People[uid].updateBasicInformation(nkey, nvalue)
+
+def printMembers():
+    for x in People.items():
+        print(x)
